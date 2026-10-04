@@ -784,6 +784,7 @@ Request shaping:
 - `streamIdleTimeoutMs` — stream-watchdog idle-timeout floor in ms for slow reasoning hosts. Default: auto (GLM coding-plan hosts, direct DeepSeek reasoning).
 - `streamMarkupHealingPattern` — recover leaked stream control markup with the `kimi`, `dsml`, `qwen`, or `thinking` grammar. Default: endpoint/model policy.
 - `cacheControlFormat` — `"anthropic"` to include Anthropic-style prompt-cache markers in chat-completions payloads. Default: auto (OpenRouter `anthropic/*` models).
+- `supportsPromptCacheKey` — send a top-level `prompt_cache_key` on chat-completions requests: the session ID, unless the caller set a prompt-cache key. Not sent when cache retention is `none`. Default: auto (Kimi Code).
 - `supportsLongPromptCacheRetention` — host honors `prompt_cache_retention: "24h"` on the Responses API. Default: auto (api.openai.com).
 - `supportsImageDetailOriginal` — allow the Responses API's nonstandard `detail: "original"` image
   mode where the endpoint supports it.
